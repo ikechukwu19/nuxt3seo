@@ -5,7 +5,7 @@
       <div class="product" v-for="(product, i) in data" :key="i">
         <RouterLink :to="`/details/${product.id}`">
           <div>
-            {{  product.title  }}
+            {{ product.title }}
           </div>
         </RouterLink>
         <div>{{ product.description }}</div>
@@ -15,13 +15,13 @@
 </template>
 
 <script setup lang="ts">
-const data = await fetch('https://dummyjson.com/products')
-                .then(res => res.json())
-                .then(data => data.products)
+const data = await fetch("https://dummyjson.com/products")
+  .then((res) => res.json())
+  .then((data) => data.products);
 
-const title = 'Example E-Commerce Website'
-const description = 'Just a simple SEO example'
-const image = 'https://i.dummyjson.com/data/products/1/thumbnail.jpg'
+const title = "Example E-Commerce Website";
+const description = "Just a simple SEO example";
+const image = "https://i.dummyjson.com/data/products/1/thumbnail.jpg";
 
 useServerSeoMeta({
   description,
@@ -29,8 +29,8 @@ useServerSeoMeta({
   ogTitle: title,
   ogDescription: description,
   ogImage: image,
-  ogImageUrl: image
-})
+  ogImageUrl: image,
+});
 </script>
 
 <style>
